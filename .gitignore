@@ -1,0 +1,3 @@
+/data/db/＊
+/data/sample_app/*
+!.gitkeep

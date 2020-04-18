@@ -6,8 +6,10 @@ services:
         ports:
           - 8093:80
         volumes:
-          - "./data/htdocs:/var/www/html"
+          - "./data/sample_app:/sample_app"
+# cakePHPのインストールフォルダを永続化しています
           - "./docker/app/httpd.conf:/etc/httpd/conf/httpd.conf"
+# Apache設定ファイルのhttpd.confを永続化しています
         depends_on:
           - mysql
     mysql:
@@ -19,7 +21,8 @@ services:
           - MYSQL_USER=root
           - MYSQL_ROOT_PASSWORD=mypassword
         volumes:
-          - "./data/db:/var/lib/mysql" 
+          - "./data/db:/var/lib/mysql"
+# mysqlのデータベースをを永続化しています
     phpmyadmin:
         image: phpmyadmin/phpmyadmin:latest
         ports:
