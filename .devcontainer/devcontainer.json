@@ -35,7 +35,7 @@
 
 	// Uncomment the next line to run commands after the container is created - for example installing git.
 	// git2系のインストール
-	"postCreateCommand": "yum -y install https://centos7.iuscommunity.org/ius-release.rpm && yum -y install git2u yum-utils && yum-config-manager --disable ius",
+	"postCreateCommand": "yum -y install https://repo.ius.io/ius-release-el7.rpm && yum --enablerepo=ius -y install git222 yum-utils && yum-config-manager",
 
 	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
 	// "remoteUser": "vscode"
